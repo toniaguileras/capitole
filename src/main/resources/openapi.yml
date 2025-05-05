@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: Product Price API
+  description: API for retrieving product prices based on application date, product ID, and brand ID.
+  version: 1.0.0
+components:
+  schemas:
+    ProductResponse:
+      type: object
+      properties:
+        productId:
+          type: string
+          example: '35455'
+        price:
+          type: number
+          format: float
+          example: 35.50
+        currency:
+          type: string
+          example: 'EUR'
+paths:
+  /v1/prices:
+    get:
+      summary: Get product price
+      description: Retrieves the price of a product based on the application date, product ID, and brand ID.
+      operationId: getProductPrice
+      tags:
+        - Product Prices
+      parameters:
+        - name: applicationDate
+          in: query
+          required: true
+          description: The application date in 'yyyy-MM-dd'T'HH:mm:ss' format.
+          schema:
+            type: string
+            format: date-time
+            example: '2020-06-14T10:00:00'
+        - name: productId
+          in: query
+          required: true
+          description: The ID of the product.
+          schema:
+            type: string
+            example: '35455'
+        - name: brandId
+          in: query
+          required: true
+          description: The ID of the brand.
+          schema:
+            type: string
+            example: '1'
+      responses:
+        '200':
+          description: Product price found successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '404':
+          description: Product price not found.
+          content: {}
+        '400':
+          description: Invalid parameters used.
+          content: {}
