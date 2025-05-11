@@ -65,7 +65,7 @@ The project follows a **hexagonal architecture**, divided into the following lay
        ```
 - The application runs with **Java 21** via `eclipse-temurin:21-jdk-alpine`.
 - I also created a **postman collection** to test every test environment
-  expected: https://www.postman.com/toniaguilera/inditex/collection/nuwfecn/inditex?action=share&creator=7511563
+  expected: https://www.postman.com/toniaguilera/workspace/inditex/collection/7511563-91a03a41-93b4-4c1b-93aa-ac69b015f95c?action=share&creator=7511563&active-environment=7511563-48235e84-366f-4979-bb2b-0892661fa555
 
 #### 🛢️ Database Access
 
