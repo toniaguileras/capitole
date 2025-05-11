@@ -1,0 +1,28 @@
+## Challenge
+The business has requested the development of a scalable solution for managing the
+company’s product catalog. The goal is to break down the existing monolithic application
+into a microservices architecture. Our team is currently responsible for the Products API,
+which will be a critical component of this new system. The requirements are described
+below.
+
+### Mandatory requirements
+- Create a REST API application dedicated to serve the products catalog. A small copy of
+the products to be served is provided below.
+- Develop an endpoint to serve the products list.
+- When serving the products list, take into account that we need to display a discount for
+certain categories and special products:
+- Electronics: 15%.
+- Home & Kitchen: 25%
+- SKUs ending in `5` like `SKU0005` will have an special 30% of discount.
+- Only one discount can be applied at the same time; giving priority to the bigger
+- The products can be filtered by `category`.
+- The products can be sorted by `SKU`, `Price`, `Description` and `Category`
+- The application should contain a `test` phase where basic features are tested.
+- Brief explanation of architectural decisions.
+- Use any good practice you think works the best here; since this will be treated as a
+production feature.
+
+### Nice to have
+- API Documentation.
+- Pagination.
+- Integration tests.
